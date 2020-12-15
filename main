@@ -16,6 +16,7 @@ import pickle
 import os.path
 import schedule
 import time
+import credential_info
 
 from datetime import timedelta
 
@@ -33,9 +34,9 @@ def main():
     Authentication is below.
     """
     # Your Account SID from twilio.com/console
-    account_sid = "ACe52a483a8c43a493860a2334bbf5497b"
+    account_sid = user_sid
     # Your Auth Token from twilio.com/console
-    auth_token = "fdfd67064e99fdec2e27b6978594f6b8"
+    auth_token = user_token
 
     client = Client(account_sid, auth_token)
 
@@ -94,8 +95,8 @@ def main():
             print(start, event['summary'])
 
             message = client.messages.create(
-                to="+17202171192",
-                from_="+113343676166",
+                to=user_number,
+                from_=twilio_number,
                 body=start + event['summary'])
         print(message.sid)
 
