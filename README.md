@@ -1,6 +1,7 @@
 calendar_notification
 
 By: Ariunzaya Enkhbold
+
 Technologies used: Twilio API samples, Google Calendar API 
 
 The purpose of this program is to utilize twilio messaging API and Google Calendar API
